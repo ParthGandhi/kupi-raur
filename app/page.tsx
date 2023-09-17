@@ -273,11 +273,11 @@ export default function Home() {
               <div className="py-2 text-lg">
                 {isCorrectAnswer
                   ? randomPoem!.isGPT
-                    ? "Yes! 🤖 wrote it"
-                    : "Yes! 👩‍🎨 wrote it"
+                    ? "Correct! 🤖 wrote it"
+                    : "Correct! 👩‍🎨 wrote it"
                   : randomPoem!.isGPT
-                  ? "No! 🤖 wrote it"
-                  : "No! 👩‍🎨 wrote it"}
+                  ? "Wrong! 🤖 wrote it"
+                  : "Wrong! 👩‍🎨 wrote it"}
               </div>
               <button
                 onClick={nextPoem}
