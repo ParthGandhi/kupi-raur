@@ -304,7 +304,11 @@ export default function Home() {
         </div>
       </div>
       <div className="absolute top-4 right-4 font-semibold">
-        <a href="https://github.com/ParthGandhi/kupi-raur" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/ParthGandhi/kupi-raur"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           GitHub
         </a>
       </div>
