@@ -3,6 +3,7 @@
 import _, { isUndefined } from "lodash";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
+// TODO(PG): move this to a static file
 const poems = [
   {
     isGPT: true,
@@ -212,22 +213,22 @@ const IsPoemGPT = ({
   setIsCorrectAnswer: Dispatch<SetStateAction<boolean | undefined>>;
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center">
       <p className="mb-4 text-lg whitespace-pre">{poem.text.toLowerCase()}</p>
       <div className="flex space-x-4">
         <button
           disabled={!isUndefined(isCorrectAnswer)}
           onClick={() => setIsCorrectAnswer(poem.isGPT === false)}
-          className="px-4 py-1  rounded w-full border-black border-2"
+          className="px-4 py-1  rounded border-black border-2"
         >
-          Rupi
+          👩‍🎨 Rupi
         </button>
         <button
           disabled={!isUndefined(isCorrectAnswer)}
           onClick={() => setIsCorrectAnswer(poem.isGPT === true)}
-          className="px-4 py-1  rounded w-full border-black border-2"
+          className="px-4 py-1  rounded border-black border-2"
         >
-          GPT
+          🤖 GPT
         </button>
       </div>
     </div>
@@ -253,7 +254,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-gray-100 text-black">
       <div className="bg-white p-10 rounded-lg">
-        <div className="relative flex place-items-center ">
+        <div className="relative flex place-items-center">
           {randomPoem && (
             <IsPoemGPT
               poem={randomPoem}
@@ -301,6 +302,11 @@ export default function Home() {
             </div>
           )}
         </div>
+      </div>
+      <div className="absolute top-4 right-4 font-semibold">
+        <a href="https://github.com/ParthGandhi/kupi-raur" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
       </div>
     </main>
   );
